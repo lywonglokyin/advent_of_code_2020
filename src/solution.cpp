@@ -1,18 +1,21 @@
-#include <time.h>
+#include <chrono>
 #include <stdio.h>
 
 #include "solution.h"
 
 void Solution::execute_and_time(){
-    time_t start_time, end_time;
+    typedef std::chrono::high_resolution_clock Clock;
+    Clock::time_point start_time, end_time;
 
-    time(&start_time);
+    start_time = Clock::now();
     this->q1();
-    time(&end_time);
-    printf("Q1 finished in %4.3f seconds.\n", difftime(start_time, end_time));
+    end_time = Clock::now();
+    std::chrono::duration<double, std::milli> ms = end_time - start_time;
+    printf("Q1 finished in %4.2f milliseconds.\n", ms.count());
 
-    time(&start_time);
+    start_time = Clock::now();
     this->q2();
-    time(&end_time);
-    printf("Q2 finished in %4.3f seconds.\n", difftime(start_time, end_time));
+    end_time = Clock::now();
+    ms = end_time - start_time;
+    printf("Q1 finished in %4.2f milliseconds.\n", ms.count());
 }
