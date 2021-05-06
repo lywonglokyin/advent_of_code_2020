@@ -48,7 +48,7 @@ public:
         if (is_passport_valid(passport_checklist)){
             ++count;
         }
-        std::cout << count << std::endl;
+        std::cout << "q1: " << count << std::endl;
     }
     void q2() override{
         auto input = parse_file_text("input/day4.txt");
@@ -76,7 +76,7 @@ public:
         if (is_passport_value_valid(passport_checklist, passport_value)){
             ++count;
         }
-        std::cout << count << std::endl;
+        std::cout << "q2: " << count << std::endl;
     }
 
 private:
