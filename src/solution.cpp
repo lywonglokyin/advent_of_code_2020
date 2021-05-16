@@ -17,5 +17,5 @@ void Solution::execute_and_time(){
     this->q2();
     end_time = Clock::now();
     ms = end_time - start_time;
-    printf("Q1 finished in %4.2f milliseconds.\n", ms.count());
+    printf("Q2 finished in %4.2f milliseconds.\n", ms.count());
 }
