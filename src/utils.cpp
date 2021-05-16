@@ -57,3 +57,13 @@ std::pair<std::string, std::string> split_as_pair(const std::string s, char deli
     std::cout << "Delimiter not found for " << s << "!" << std::endl;
     throw "Delimiter not found!";
 }
+
+long long gcd(long long a, long long b){
+    return a == 0? b
+    : b == 0? a
+    : gcd(b, a%b);
+}
+
+long long lcm(long long a, long long b){
+    return (a != 0 && b != 0) ? a / gcd(a, b) * b : 0;
+}
