@@ -65,10 +65,10 @@ public:
 class Day8: public Solution{
 public:
     void q1() override{
-        auto input = parse_file_text("./input/day8.txt");
+        auto input = utils::parse_file_text("./input/day8.txt");
         std::vector<std::pair<std::string, int>> code;
         for (auto line: input){
-            auto words = split_as_pair(line, ' ');
+            auto words = utils::split_as_pair(line, ' ');
             code.push_back(std::make_pair(words.first, std::stoi(words.second)));
         };
         std::vector<int> count(input.size(),0);
@@ -84,10 +84,10 @@ public:
         std::cout << "q1: " << itpr.accumulator << std::endl;
     }
     void q2() override{
-        auto input = parse_file_text("./input/day8.txt");
+        auto input = utils::parse_file_text("./input/day8.txt");
         std::vector<std::pair<std::string, int>> code;
         for (auto line: input){
-            auto words = split_as_pair(line, ' ');
+            auto words = utils::split_as_pair(line, ' ');
             code.push_back(std::make_pair(words.first, std::stoi(words.second)));
         };
         size_t code_size = code.size();

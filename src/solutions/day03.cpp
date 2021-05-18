@@ -8,7 +8,7 @@
 class Day3: public Solution{
 public:
     void q1() override{
-        auto input = parse_file_text("input/day3.txt");
+        auto input = utils::parse_file_text("input/day3.txt");
 
         int horizontal_pos = 0;
         int map_length = input[0].length();
@@ -23,7 +23,7 @@ public:
         std::cout << "q1: " <<count << std::endl;
     }
     void q2() override{
-        auto input = parse_file_text("input/day3.txt");
+        auto input = utils::parse_file_text("input/day3.txt");
 
         int map_length = input[0].length();
 

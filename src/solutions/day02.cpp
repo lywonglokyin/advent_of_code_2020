@@ -9,7 +9,7 @@ public:
     void q1() override{
         int valid = 0;
 
-        auto input = parse_file_text("input/day2.txt");
+        auto input = utils::parse_file_text("input/day2.txt");
         for (std::string s: input){
             std::size_t dash_pos = s.find('-');
             std::size_t colon_pos = s.find(':');
@@ -33,7 +33,7 @@ public:
     void q2() override{
         int valid = 0;
 
-        auto input = parse_file_text("input/day2.txt");
+        auto input = utils::parse_file_text("input/day2.txt");
         for (std::string s: input){
             std::size_t dash_pos = s.find('-');
             std::size_t colon_pos = s.find(':');

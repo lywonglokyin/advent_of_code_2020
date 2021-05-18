@@ -8,7 +8,7 @@
 class Day9: public Solution{
 public:
     void q1() override{
-        auto input = parse_file_integer("./input/day9.txt");
+        auto input = utils::parse_file_integer("./input/day9.txt");
         
         std::unordered_set<int> prev_num;
         int no_of_preamble = 25;
@@ -37,7 +37,7 @@ public:
     void q2() override{
         const int INVALID_NUM = 50047984;
         
-        auto input = parse_file_integer("./input/day9.txt");
+        auto input = utils::parse_file_integer("./input/day9.txt");
         size_t left_ptr = 0;
         size_t right_ptr = 0;
         int sum = input[0];

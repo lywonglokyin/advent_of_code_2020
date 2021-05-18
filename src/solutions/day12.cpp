@@ -131,7 +131,7 @@ struct WaypointShip{
 class Day12: public Solution{
 public:
     void q1() override{
-        auto input = parse_file_text("./input/day12.txt");
+        auto input = utils::parse_file_text("./input/day12.txt");
         
         Ship ship{0, 0, Ship::Direction::E};
 
@@ -171,7 +171,7 @@ public:
     }
     void q2() override{
 
-        auto input = parse_file_text("./input/day12.txt");
+        auto input = utils::parse_file_text("./input/day12.txt");
         
         WaypointShip ship{0, 0, {10, 1}};
 

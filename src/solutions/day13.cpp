@@ -9,10 +9,10 @@
 class Day13: public Solution{
 public:
     void q1() override{
-        auto input = parse_file_text("./input/day13.txt");
+        auto input = utils::parse_file_text("./input/day13.txt");
         int from_time = std::stoi(input[0]);
 
-        auto buses = split(input[1], ',');
+        auto buses = utils::split(input[1], ',');
 
 
         int earliest_bus_id = -1;
@@ -31,9 +31,9 @@ public:
         std::cout << "q1: " << earliest_bus_id * shortest_wait_time << std::endl;
     }
     void q2() override{
-        auto input = parse_file_text("./input/day13.txt");
+        auto input = utils::parse_file_text("./input/day13.txt");
 
-        auto buses = split(input[1], ',');
+        auto buses = utils::split(input[1], ',');
         std::vector<std::pair<long long, long long>> parsedInput;
         for (size_t i=0; i<buses.size(); ++i){
             if (buses[i] == "x"){
@@ -73,7 +73,7 @@ private:
             }
             long long target = least_common_multiple_with_modulo(pair.first, pair.second, max_divisor, max_divisor_modulo);
             long long shift_count = (target - max_divisor_modulo) / max_divisor;
-            long long indifferent_shifts = lcm(pair.first, max_divisor)/max_divisor;
+            long long indifferent_shifts = utils::lcm(pair.first, max_divisor)/max_divisor;
             new_input.emplace_back(std::make_pair(indifferent_shifts, shift_count));
         }
 

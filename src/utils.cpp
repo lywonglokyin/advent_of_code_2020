@@ -3,7 +3,7 @@
 #include "utils.h"
 #include <iostream>
 
-std::vector<std::string> parse_file_text(std::string filename){
+std::vector<std::string> utils::parse_file_text(const std::string& filename){
     std::vector<std::string> input;
     std::fstream file_stream(filename);
 
@@ -15,7 +15,7 @@ std::vector<std::string> parse_file_text(std::string filename){
     return input;
 }
 
-std::vector<int> parse_file_integer(std::string filename){
+std::vector<int> utils::parse_file_integer(const std::string& filename){
     std::vector<int> input;
     std::fstream file_stream;
     file_stream.open(filename);
@@ -28,7 +28,7 @@ std::vector<int> parse_file_integer(std::string filename){
     return input;
 }
 
-std::vector<std::string> split(const std::string s, char delim){
+std::vector<std::string> utils::split(const std::string& s, char delim){
     std::vector<std::string> words;
     size_t prev_pos = 0;
     for (size_t i = 0; i < s.length(); ++i){
@@ -45,7 +45,7 @@ std::vector<std::string> split(const std::string s, char delim){
     return words;
 }
 
-std::pair<std::string, std::string> split_as_pair(const std::string s, char delim){
+std::pair<std::string, std::string> utils::split_as_pair(const std::string& s, char delim){
     for (size_t i = 0; i< s.length(); ++i){
         if (s.at(i) == delim){
             if (i == s.length() - 1){
@@ -58,12 +58,12 @@ std::pair<std::string, std::string> split_as_pair(const std::string s, char deli
     throw "Delimiter not found!";
 }
 
-long long gcd(long long a, long long b){
+long long utils::gcd(long long a, long long b){
     return a == 0? b
     : b == 0? a
     : gcd(b, a%b);
 }
 
-long long lcm(long long a, long long b){
+long long utils::lcm(long long a, long long b){
     return (a != 0 && b != 0) ? a / gcd(a, b) * b : 0;
 }

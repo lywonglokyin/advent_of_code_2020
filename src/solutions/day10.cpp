@@ -9,7 +9,7 @@
 class Day10: public Solution{
 public:
     void q1() override{
-        auto input = parse_file_integer("./input/day10.txt");
+        auto input = utils::parse_file_integer("./input/day10.txt");
         std::sort(input.begin(), input.end());
 
         int oneDiff = 0;
@@ -30,7 +30,7 @@ public:
         
     }
     void q2() override{
-        auto input = parse_file_integer("./input/day10.txt");
+        auto input = utils::parse_file_integer("./input/day10.txt");
         std::sort(input.begin(), input.end(), std::greater<int>());
 
         int max = input[0];

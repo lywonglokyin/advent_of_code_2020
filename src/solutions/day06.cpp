@@ -15,7 +15,7 @@ public:
 
         int count = 0;
 
-        auto input = parse_file_text("./input/day6.txt");
+        auto input = utils::parse_file_text("./input/day6.txt");
         for (auto line: input){
             if (line == ""){
                 count += std::accumulate(flags, flags + NUMBER_OF_CHAR, 0);
@@ -38,7 +38,7 @@ public:
         int count = 0;
         int num_ppl = 0;
 
-        auto input = parse_file_text("./input/day6.txt");
+        auto input = utils::parse_file_text("./input/day6.txt");
         for (auto line: input){
             if (line == ""){
                 for (int i=0; i<NUMBER_OF_CHAR; ++i){

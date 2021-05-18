@@ -46,12 +46,12 @@ namespace q2{
 class Day6: public Solution{
 public:
     void q1() override{
-        auto input = parse_file_text("./input/day7.txt");
+        auto input = utils::parse_file_text("./input/day7.txt");
 
         std::unordered_map<std::string, q1::Bag*> table;
 
         for (auto line: input){
-            auto sections = split(line, ',');
+            auto sections = utils::split(line, ',');
 
             int bagPos = sections[0].find("bag");
             std::string parent = sections[0].substr(0, bagPos-1);
@@ -130,12 +130,12 @@ public:
         }
     }
     void q2() override{
-        auto input = parse_file_text("./input/day7.txt");
+        auto input = utils::parse_file_text("./input/day7.txt");
 
         std::unordered_map<std::string, q2::Bag*> table;
 
         for (auto line: input){
-            auto sections = split(line, ',');
+            auto sections = utils::split(line, ',');
 
             int bagPos = sections[0].find("bag");
             std::string parent = sections[0].substr(0, bagPos-1);

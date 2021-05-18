@@ -9,7 +9,7 @@
 class Day5: public Solution{
 public:
     void q1() override{
-        auto input = parse_file_text("./input/day5.txt");
+        auto input = utils::parse_file_text("./input/day5.txt");
         int max = -1;
         for (auto line: input){
             std::replace(line.begin(), line.begin() + 7, 'F', '0');
@@ -25,7 +25,7 @@ public:
         std::cout << "q1: " << max << std::endl;        
     }
     void q2() override{
-        auto input = parse_file_text("./input/day5.txt");
+        auto input = utils::parse_file_text("./input/day5.txt");
         int sum = 0;
         std::string firstLine = input[0];
         std::replace(firstLine.begin(), firstLine.begin() + 7, 'F', '0');

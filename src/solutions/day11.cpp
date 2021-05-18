@@ -14,7 +14,7 @@ struct Pos{
 class Day11: public Solution{
 public:
     void q1() override{
-        auto input = parse_file_text("./input/day11.txt");
+        auto input = utils::parse_file_text("./input/day11.txt");
         int width = input[0].length();
         int height = input.size();
 
@@ -49,7 +49,7 @@ public:
         std::cout << "q1: " << count << std::endl;
     }
     void q2() override{
-        auto input = parse_file_text("./input/day11.txt");
+        auto input = utils::parse_file_text("./input/day11.txt");
         int width = input[0].length();
         int height = input.size();
 

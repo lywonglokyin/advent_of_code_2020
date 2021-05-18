@@ -8,7 +8,7 @@
 class Day14: public Solution{
 public:
     void q1() override{
-        auto input = parse_file_text("./input/day14.txt");
+        auto input = utils::parse_file_text("./input/day14.txt");
 
         unsigned long zero_mask = std::numeric_limits<unsigned long>::max();
         unsigned long one_mask = 0;
@@ -32,7 +32,7 @@ public:
                 }
             } else {
                 // Mem
-                auto pair = split_as_pair(line, ']');
+                auto pair = utils::split_as_pair(line, ']');
                 int mem_loc = std::stoi(pair.first.substr(4));
                 unsigned long value = std::stoi(pair.second.substr(3));
                 value = (value & zero_mask) | one_mask;
@@ -47,7 +47,7 @@ public:
         std::cout << "q1: " << sum << std::endl;
     }
     void q2() override{
-        auto input = parse_file_text("./input/day14.txt");
+        auto input = utils::parse_file_text("./input/day14.txt");
 
         unsigned long zero_mask = std::numeric_limits<unsigned long>::max();
         unsigned long one_mask = 0;
@@ -74,7 +74,7 @@ public:
                 }
             } else {
                 // Mem
-                auto pair = split_as_pair(line, ']');
+                auto pair = utils::split_as_pair(line, ']');
                 unsigned long mem_loc = std::stoi(pair.first.substr(4));
                 mem_loc = mem_loc | one_mask;
                 unsigned long value = std::stoi(pair.second.substr(3));

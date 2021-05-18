@@ -26,7 +26,7 @@ static std::unordered_map<std::string, PassportFields> const table = {
 class Day4: public Solution{
 public:
     void q1() override{
-        auto input = parse_file_text("input/day4.txt");
+        auto input = utils::parse_file_text("input/day4.txt");
         size_t count = 0;
         bool passport_checklist[PassportFields::NUMBER_OF_PASSPORT_FIELDS] = {false};
         for (auto line: input){
@@ -38,9 +38,9 @@ public:
                     passport_checklist[i] = false;
                 }
             } else {
-                auto entries = split(line, ' ');
+                auto entries = utils::split(line, ' ');
                 for (auto entry: entries){
-                    auto pair = split_as_pair(entry, ':');
+                    auto pair = utils::split_as_pair(entry, ':');
                     passport_checklist[table.at(pair.first)] = true;
                 }
             }
@@ -51,7 +51,7 @@ public:
         std::cout << "q1: " << count << std::endl;
     }
     void q2() override{
-        auto input = parse_file_text("input/day4.txt");
+        auto input = utils::parse_file_text("input/day4.txt");
         size_t count = 0;
         bool passport_checklist[PassportFields::NUMBER_OF_PASSPORT_FIELDS] = {false};
         std::string passport_value[PassportFields::NUMBER_OF_PASSPORT_FIELDS] = {""};
@@ -65,9 +65,9 @@ public:
                     passport_value[i] = "";
                 }
             } else {
-                auto entries = split(line, ' ');
+                auto entries = utils::split(line, ' ');
                 for (auto entry: entries){
-                    auto pair = split_as_pair(entry, ':');
+                    auto pair = utils::split_as_pair(entry, ':');
                     passport_checklist[table.at(pair.first)] = true;
                     passport_value[table.at(pair.first)] = pair.second;
                 }

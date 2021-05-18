@@ -8,7 +8,7 @@
 class Day1: public Solution{
 public:
     void q1() override{
-        auto input = parse_file_integer("input/day1.txt");
+        auto input = utils::parse_file_integer("input/day1.txt");
         std::unordered_set<int> hash_set(input.begin(), input.end());
         for (int i: input){
             int target = 2020 - i;
@@ -24,7 +24,7 @@ public:
         throw std::runtime_error("Pair not exist!");
     }
     void q2() override{
-        auto input = parse_file_integer("input/day1.txt");
+        auto input = utils::parse_file_integer("input/day1.txt");
         std::unordered_set<int> hash_set(input.begin(), input.end());
         for (int i: input){
             int target = 2020 - i;
