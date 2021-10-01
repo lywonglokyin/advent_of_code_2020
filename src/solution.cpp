@@ -1,9 +1,9 @@
-#include <chrono>
 #include <stdio.h>
+#include <chrono>
 
 #include "solution.h"
 
-void Solution::execute_and_time(){
+void Solution::execute_and_time() {
     typedef std::chrono::high_resolution_clock Clock;
     Clock::time_point start_time, end_time;
 

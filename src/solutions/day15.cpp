@@ -1,27 +1,22 @@
-#include <unordered_map>
 #include <iostream>
 #include <stack>
+#include <unordered_map>
 
 #include "solution.h"
 #include "utils.h"
 
-class Day15: public Solution{
-public:
-    void q1() override{
-        std::unordered_map<int, int> history({
-            {12, 1},
-            {1, 2},
-            {16, 3},
-            {3, 4},
-            {11, 5}
-        });
+class Day15 : public Solution {
+   public:
+    void q1() override {
+        std::unordered_map<int, int> history(
+            {{12, 1}, {1, 2}, {16, 3}, {3, 4}, {11, 5}});
 
         int prev_num = 0;
         int curr_round = 7;
 
-        while (curr_round!=2021){
+        while (curr_round != 2021) {
             int to_be_spoken = 0;
-            if (history.find(prev_num)!=history.end()){
+            if (history.find(prev_num) != history.end()) {
                 // Not new
                 to_be_spoken = (curr_round - 1) - history[prev_num];
             }
@@ -31,21 +26,16 @@ public:
         }
         std::cout << "q1: " << prev_num << std::endl;
     }
-    void q2() override{
-        std::unordered_map<int, int> history({
-            {12, 1},
-            {1, 2},
-            {16, 3},
-            {3, 4},
-            {11, 5}
-        });
+    void q2() override {
+        std::unordered_map<int, int> history(
+            {{12, 1}, {1, 2}, {16, 3}, {3, 4}, {11, 5}});
 
         int prev_num = 0;
         int curr_round = 7;
 
-        while (curr_round!=30000001){
+        while (curr_round != 30000001) {
             int to_be_spoken = 0;
-            if (history.find(prev_num)!=history.end()){
+            if (history.find(prev_num) != history.end()) {
                 // Not new
                 to_be_spoken = (curr_round - 1) - history[prev_num];
             }
@@ -57,7 +47,7 @@ public:
     }
 };
 
-int main(){
+int main() {
     Day15 solution;
     solution.execute_and_time();
 }

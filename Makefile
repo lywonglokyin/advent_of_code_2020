@@ -1,5 +1,5 @@
-cc := g++
-flags := -Wall -Wextra -std=c++14 -pedantic
+cc := g++-8
+flags := -Wall -Wextra -Werror -std=c++17 -pedantic
 
 include_folder := ./include
 src_folder := src
@@ -15,7 +15,10 @@ test_out := $(patsubst $(test_folder)/%.cpp, $(test_out_folder)/%, $(test_file))
 OUT := $(patsubst $(solutions_folder)/%.cpp, $(bin_folder)/%, $(wildcard $(solutions_folder)/*.cpp))
 OBJECTS := $(patsubst $(src_folder)/%.cpp, $(obj_folder)/%.o, $(wildcard $(src_folder)/*.cpp))
 
-all: $(OUT)
+all: clang-format $(OUT)
+
+clang-format: $(OBJECTS)
+	find . -regex '.*\.\(cpp\|h\)' -exec clang-format -style=file -i {} \;
 
 $(OUT): $(bin_folder)/%: $(solutions_folder)/%.cpp $(OBJECTS) | $(bin_folder)
 	$(cc) $(flags) -I$(include_folder) -o $@ $^
